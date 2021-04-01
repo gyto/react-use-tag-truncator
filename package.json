@@ -1,0 +1,22 @@
+{
+  "name": "@gyto/react-use-tag-truncator",
+  "version": "1.0.0",
+  "description": "simple hook to truncate items in the given list",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "author": "gyto23@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "dev": "rollup -c -w"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.148.0",
+    "rollup": "^2.44.0",
+    "rollup-plugin-flow": "^1.1.1"
+  },
+  "peerDependencies": {
+    "react": ">=16.x.x",
+    "react-dom": ">=16.x.x",
+    "resize-observer-polyfill": ">=1.x.x"
+  }
+}
