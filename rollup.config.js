@@ -1,4 +1,7 @@
+import flowEntry from "rollup-plugin-flow-entry";
 import flow from "rollup-plugin-flow";
+import commonjs from "@rollup/plugin-commonjs";
+
 import pkg from "./package.json";
 
 export default {
@@ -7,14 +10,16 @@ export default {
     {
       file: pkg.main,
       format: "cjs",
-      sourcemap: true,
     },
     {
       file: pkg.module,
       format: "es",
-      sourcemap: true,
     },
   ],
-  plugins: [ flow() ],
-  external: [ "react", "react-dom" ],
+  plugins: [
+    flowEntry({ mode: "strict-local" }),
+    flow({ pretty: true }),
+    commonjs(),
+  ],
+  external: [ "react", "react-dom", "resize-observer-polyfill" ],
 };

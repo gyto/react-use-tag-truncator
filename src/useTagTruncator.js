@@ -8,11 +8,11 @@ import ResizeObserver from "resize-observer-polyfill";
  * @param deps
  * @return {[{current: unknown}, (boolean|*), boolean, (function(*=): void)]}
  */
-export default function useTagTruncator(deps: $ReadOnlyArray = []) {
+export default function useTagTruncator(deps: $ReadOnlyArray<[]> = []) {
   const mounted = useRef();
-  const ref = useRef<HTMLElement>(null);
-  const [ isExtended, setExtend ] = useState(false);
-  const [hiddenCount, setHiddenCount] = useState(undefined);
+  const ref = useRef<null | (HTMLElement & { changeCallback: Function})>(null);
+  const [ isExtended, setExtend ] = useState<boolean>(false);
+  const [ hiddenCount, setHiddenCount ] = useState(undefined);
 
   const truncate = () => {
     if (!ref.current) return;
@@ -35,7 +35,7 @@ export default function useTagTruncator(deps: $ReadOnlyArray = []) {
       item.hidden = false;
       nextItem.hidden = false;
       const nextItemRect = nextItem.getBoundingClientRect();
-      const containerRect = ref.current.getBoundingClientRect();
+      const containerRect = ref.current?.getBoundingClientRect();
 
       nextItem.hidden = !isExtended;
 

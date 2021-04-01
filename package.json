@@ -10,9 +10,11 @@
     "dev": "rollup -c -w"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^18.0.0",
     "flow-bin": "^0.148.0",
     "rollup": "^2.44.0",
-    "rollup-plugin-flow": "^1.1.1"
+    "rollup-plugin-flow": "^1.1.1",
+    "rollup-plugin-flow-entry": "^0.3.5"
   },
   "peerDependencies": {
     "react": ">=16.x.x",
