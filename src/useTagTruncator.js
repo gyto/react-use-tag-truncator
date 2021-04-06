@@ -8,7 +8,7 @@ import ResizeObserver from "resize-observer-polyfill";
  * @param deps
  * @return {[{current: unknown}, (boolean|*), boolean, (function(*=): void)]}
  */
-export default function useTagTruncator(deps: $ReadOnlyArray<[]> = []) {
+export const useTagTruncator = (deps: $ReadOnlyArray<[]> = []) => {
   const mounted = useRef();
   const ref = useRef<null | (HTMLElement & { changeCallback: Function})>(null);
   const [ isExtended, setExtend ] = useState<boolean>(false);

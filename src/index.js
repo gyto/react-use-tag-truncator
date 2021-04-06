@@ -1,0 +1,1 @@
+export { useTagTruncator } from "useTagTruncator";
