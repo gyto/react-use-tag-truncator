@@ -16,7 +16,7 @@ Minor stuff need to be done in project:
 
 ```js
 
-import useTagTruncator from "src/useTagTruncator";
+import useTagTruncator from "react-use-tag-truncator";
 
 const App = () => {
   const [
