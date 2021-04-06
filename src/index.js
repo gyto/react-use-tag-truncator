@@ -1,1 +1,3 @@
-export { useTagTruncator } from "useTagTruncator";
+import { useTagTruncator } from "useTagTruncator";
+
+export { useTagTruncator }

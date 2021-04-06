@@ -1,1 +1,1 @@
-module.exports = require("./dist/react-use-tag-truncator");
+module.exports = require("./dist/react-use-tag-truncator.js");

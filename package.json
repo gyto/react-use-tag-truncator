@@ -13,6 +13,13 @@
     "react",
     "truncate"
   ],
+  "files": [
+    "CHANGELOG.md",
+    "src/**/*.js",
+    "dist",
+    "README.md",
+    "scripts"
+  ],
   "license": "MIT",
   "scripts": {
     "dev": "rollup -c -w"
