@@ -2,18 +2,13 @@ import flowEntry from "rollup-plugin-flow-entry";
 import flow from "rollup-plugin-flow";
 import commonjs from "@rollup/plugin-commonjs";
 
-import pkg from "./package.json";
-
 export default {
   input: "src/index.js",
   output: [
     {
-      file: pkg.main,
-      format: "cjs",
-    },
-    {
-      file: pkg.module,
-      format: "es",
+      name: "useTagTruncator",
+      file: "dist/react-use-tag-truncator.js",
+      format: "umd",
     },
   ],
   plugins: [

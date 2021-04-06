@@ -1,9 +1,8 @@
 {
   "name": "react-use-tag-truncator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "simple hook to truncate items in the given list",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "main": "index.js",
   "author": "gyto23@gmail.com",
   "bugs": "https://github.com/gyto/react-use-tag-truncator/issues",
   "repository": {
