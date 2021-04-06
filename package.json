@@ -1,11 +1,19 @@
 {
-  "name": "@gyto/react-use-tag-truncator",
+  "name": "react-use-tag-truncator",
   "version": "1.0.1",
   "description": "simple hook to truncate items in the given list",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "author": "gyto23@gmail.com",
-  "repository": "https://github.com/gyto/react-use-tag-truncator",
+  "bugs": "https://github.com/gyto/react-use-tag-truncator/issues",
+  "repository": {
+    "url": "https://github.com/gyto/react-use-tag-truncator",
+    "type": "git"
+  },
+  "keywords": [
+    "react",
+    "truncate"
+  ],
   "license": "MIT",
   "scripts": {
     "dev": "rollup -c -w"
