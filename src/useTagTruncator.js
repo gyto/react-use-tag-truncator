@@ -19,41 +19,40 @@ export default function useTagTruncator(deps: $ReadOnlyArray<[]> = []) {
 
     ref.current.style.overflow = "hidden";
     const childNodes: HTMLElement[] = Array.from(ref.current.children);
-    const childCount = childNodes.length;
 
     for (let node of childNodes) {
       node.hidden = true;
     }
 
-    if (childCount === 0 && !mounted.current) return;
+    if (!mounted.current) return;
+    if (childNodes.length === 0) return;
 
     let index: number;
-    for (index = 0; index < childCount; index += 2) {
+    for (index = 0; index < childNodes.length; index++) {
       const item = childNodes[ index ];
       const nextItem = childNodes[ index + 1 ];
+      console.log(childNodes, nextItem);
 
-      item.hidden = false;
-      nextItem.hidden = false;
-      const nextItemRect = nextItem.getBoundingClientRect();
-      const containerRect = ref.current?.getBoundingClientRect();
+      if (nextItem) {
+        item.hidden = false;
+        nextItem.hidden = false;
+        const nextItemRect = nextItem.getBoundingClientRect();
+        const containerRect = ref.current.getBoundingClientRect();
+        nextItem.hidden = true;
 
-      nextItem.hidden = !isExtended;
-
-      if (nextItemRect.bottom > containerRect.bottom
-        || nextItemRect.right > containerRect.right
-      ) {
-        item.hidden = true;
-        if (index > 0) {
-          childNodes[ index - 1 ].hidden = false;
+        if (nextItemRect.bottom > containerRect.bottom
+          || nextItemRect.right > containerRect.right
+        ) {
+          item.hidden = true;
+          if (index > 0) {
+            childNodes[ index - 1 ].hidden = false;
+          }
+          break;
         }
-        break;
       }
     }
 
-    if (index === childCount) {
-      childNodes[ childNodes.length - 1 ].hidden = false;
-    }
-
+    childNodes[ childNodes.length - 1 ].hidden = false;
     setHiddenCount(childNodes.filter(o => o.hidden).length);
   };
 
