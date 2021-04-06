@@ -1,6 +1,6 @@
 {
   "name": "react-use-tag-truncator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "simple hook to truncate items in the given list",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
