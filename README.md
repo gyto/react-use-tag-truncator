@@ -1,5 +1,17 @@
 # useTagTruncator
 
+## Installation
+
+---
+
+```
+yarn add react-use-tag-truncator
+
+- or -
+
+npm install react-use-tag-truncator
+```
+
 ## TODO
 
 ---
