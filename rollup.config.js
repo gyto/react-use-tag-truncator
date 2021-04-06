@@ -8,7 +8,7 @@ export default {
     {
       name: "useTagTruncator",
       file: "dist/react-use-tag-truncator.js",
-      format: "umd",
+      format: "cjs",
       globals: {
         react: "React",
       },
