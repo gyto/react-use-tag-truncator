@@ -45,7 +45,7 @@ const App = () => {
     <ul
       ref={containerRef}
       style={{
-        maxHeight: isExtended ? "none" : "30px",
+        height: isExtended ? "none" : "35px",
         width: "300px",
         display: "flex",
         flexWrap: "wrap",
