@@ -17,18 +17,27 @@
     "CHANGELOG.md",
     "src/**/*.js",
     "dist",
-    "README.md",
-    "scripts/"
+    "README.md"
   ],
   "license": "MIT",
   "scripts": {
     "dev": "rollup -c -w",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
     "@rollup/plugin-commonjs": "^18.0.0",
+    "@storybook/addon-actions": "6.2.5",
+    "@storybook/addon-essentials": "6.2.5",
+    "@storybook/addon-links": "6.2.5",
+    "@storybook/react": "6.2.5",
+    "babel-loader": "^8.2.2",
     "flow-bin": "^0.148.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "resize-observer-polyfill": "^1.5.1",
     "rollup": "^2.44.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-flow": "^1.1.1",

@@ -6,9 +6,8 @@
 
 ```
 yarn add react-use-tag-truncator
-
-- or -
-
+```
+```
 npm install react-use-tag-truncator
 ```
 
@@ -18,7 +17,7 @@ npm install react-use-tag-truncator
 
 Minor stuff need to be done in project:
 - [ ] Fix remaining flowtype errors
-- [ ] Demo
+- [x] Demo
 - [ ] Test
 
 
@@ -36,16 +35,13 @@ const App = () => {
     isExtended,
     toggleExtend,
     hiddenCount,
-    mounted
   ] = useTagTruncator();
-  
-  if (!mounted) return "loading..."
   
   return (
     <ul
       ref={containerRef}
       style={{
-        height: isExtended ? "none" : "35px",
+        height: isExtended ? "none" : "65px",
         width: "300px",
         display: "flex",
         flexWrap: "wrap",
