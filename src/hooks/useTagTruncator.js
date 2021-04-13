@@ -9,7 +9,6 @@ import ResizeObserver from "resize-observer-polyfill";
  * @return {[{current: unknown}, (boolean|*), boolean, (function(*=): void)]}
  */
 export const useTagTruncator = (deps = []) => {
-  const mounted = useRef();
   const ref = useRef(null);
   const [ isExtended, setExtend ] = useState(false);
   const [ hiddenCount, setHiddenCount ] = useState(undefined);
@@ -24,7 +23,6 @@ export const useTagTruncator = (deps = []) => {
       node.hidden = true;
     }
 
-    if (!mounted.current) return;
     if (childNodes.length === 0) return;
 
     let index: number;
@@ -51,13 +49,16 @@ export const useTagTruncator = (deps = []) => {
       }
     }
 
-    childNodes[ childNodes.length - 1 ].hidden = false;
-    setHiddenCount(childNodes.filter(o => o.hidden).length);
+    const hiddenItems = childNodes.filter(h => h.hidden).length - 1;
+
+    if (isExtended || childNodes.length > hiddenItems && hiddenItems) {
+      childNodes[ childNodes.length - 1 ].hidden = false;
+    }
+
+    setHiddenCount(hiddenItems);
   };
 
   useLayoutEffect(() => {
-    mounted.current = true;
-
     truncate();
 
     const resizeObserver = new ResizeObserver((entries => {
@@ -71,7 +72,6 @@ export const useTagTruncator = (deps = []) => {
     if (copyRef) resizeObserver.observe(copyRef);
 
     return () => {
-      mounted.current = false;
       if (copyRef) resizeObserver.unobserve(copyRef);
     };
   }, [ ...deps, hiddenCount, isExtended ]);
@@ -81,6 +81,5 @@ export const useTagTruncator = (deps = []) => {
     isExtended,
     () => setExtend(!isExtended),
     hiddenCount,
-    mounted.current,
   ];
 };

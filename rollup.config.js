@@ -9,7 +9,6 @@ export default {
   output: {
     name: "useTagTruncator",
     file: "dist/react-use-tag-truncator.js",
-    exports: 'named',
     format: "cjs",
     sourcemap: true,
   },

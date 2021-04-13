@@ -47,3 +47,4 @@ typings/
 # generate output
 dist
 .idea
+storybook-static/
