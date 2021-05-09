@@ -16,8 +16,8 @@ export default {
 
 const Template = (args) => <List {...args}/>
 
-export const SimpleList = Template.bind({});
+export const Default = Template.bind({});
 
-SimpleList.args = {
+Default.args = {
   itemCount: 20,
 }
